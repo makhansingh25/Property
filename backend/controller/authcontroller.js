@@ -138,7 +138,7 @@ const DeleteUser = async (req, res) => {
       .status(500)
       .json({ message: "Technical error", details: error.message });
   }
-};
+}; 
 
 module.exports = {
   signup,
