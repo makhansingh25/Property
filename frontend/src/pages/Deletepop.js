@@ -14,7 +14,7 @@ const Deletepop = () => {
         <h3>Are you sure you want to delete this account</h3>
         <p>If you want to delete this account you could-not signin again</p>
         <div className="delbtn">
-          <Link to={"/"}>No</Link>
+          <Link to={"/"}>NO</Link>
           <DeleteAccount id={users._id} />
         </div>
       </div>
