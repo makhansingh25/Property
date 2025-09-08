@@ -13,7 +13,7 @@ const DeleteAccount = ({ id }) => {
     });
     const data = await response.json();
     console.log(data);
-    if (data.deleted === 1) {
+    if (data.deleted == 1) {
       storeToken("");
       navigate("/signup");
       toast.success(data.message);
