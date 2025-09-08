@@ -47,8 +47,11 @@ const Signup = () => {
         toast.success(datas.message);
         navigate("/");
       } else {
-        console.error("Signup failed:", datas.errors);
-        toast.error(datas.error);
+        toast.error(
+          Object.values(datas.errors ?? {})
+            .flatMap((e) => e._errors ?? [])
+            .join(", ")
+        );
       }
     } catch (error) {
       console.error("An error occurred:", error);
