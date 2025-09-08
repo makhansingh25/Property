@@ -6,12 +6,14 @@ const DeleteAccount = ({ id }) => {
   const { storeToken } = useAuth();
   const navigate = useNavigate();
   const DeleteHandle = async () => {
-    const response = await fetch(`http://localhost:3000/api/deleteuser/${id}`, {
+    const URL = process.env.REACT_APP_BACKEND_URL;
+
+    const response = await fetch(`${URL}/deleteuser/${id}`, {
       method: "DELETE",
     });
     const data = await response.json();
     console.log(data);
-    if (data.delted == 1) {
+    if (data.delted === 1) {
       storeToken("");
       navigate("/signup");
       toast.success(data.message);
